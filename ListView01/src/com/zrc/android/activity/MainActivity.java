@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
     private ListView mListView1;
     private ListView mListView2;
     private ListView mListView3;
+	private ListView mListView4;
     private String[] mStringArray;
 
     @Override
