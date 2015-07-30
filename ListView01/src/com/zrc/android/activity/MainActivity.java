@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     private ListView mListView2;
     private ListView mListView3;
 	private ListView mListView4;
+	private ListView mListView5;
     private String[] mStringArray;
 
     @Override
@@ -51,7 +52,7 @@ public class MainActivity extends Activity {
 
     
     private void setAdapterForListView1() {
-        // 可以将所有的数据存放在一个数组里，所以使用ArrayAdapter
+        // 鍙互灏嗘墍鏈夌殑鏁版嵁瀛樻斁鍦ㄤ竴涓暟缁勯噷锛屾墍浠ヤ娇鐢ˋrrayAdapter
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, mStringArray);
         mListView1.setAdapter(arrayAdapter);
@@ -65,34 +66,34 @@ public class MainActivity extends Activity {
             i++;
         }
 
-        // 所有的ListItem都放在一个Map里
-        // 所有的ListItem的对应行的key必须相同
+        // 鎵�鏈夌殑ListItem閮芥斁鍦ㄤ竴涓狹ap閲�
+        // 鎵�鏈夌殑ListItem鐨勫搴旇鐨刱ey蹇呴』鐩稿悓
         
         Map<String, Object> item1 = new HashMap<String, Object>();
         item1.put("row1", "hi");
-        item1.put("row2", "儿童节快乐");
+        item1.put("row2", "鍎跨鑺傚揩涔�");
 
         Map<String, Object> item2 = new HashMap<String, Object>();
         item2.put("row1", "hello");
-        item2.put("row2", "哆啦A梦上映了");
+        item2.put("row2", "鍝嗗暒A姊︿笂鏄犱簡");
         
         Map<String, Object> item3 = new HashMap<String, Object>();
         item3.put("row1", "great");
-        item3.put("row2", "Brillo发布了");
+        item3.put("row2", "Brillo鍙戝竷浜�");
         
         Map<String, Object> item4 = new HashMap<String, Object>();
         item4.put("row1", "hoho");
-        item4.put("row2", "AndroidM来了");
+        item4.put("row2", "AndroidM鏉ヤ簡");
         
-        // 约定优于配置  Conventions Over Configuarations
+        // 绾﹀畾浼樹簬閰嶇疆  Conventions Over Configuarations
 
-        // 把所有的ListItem对应的Map都放在一个List中
+        // 鎶婃墍鏈夌殑ListItem瀵瑰簲鐨凪ap閮芥斁鍦ㄤ竴涓狶ist涓�
         list.add(item1);
         list.add(item2);
         list.add(item3);
         list.add(item4);
 
-        // 通过映射关系把ListView中的所有ListItem显示出来
+        // 閫氳繃鏄犲皠鍏崇郴鎶奓istView涓殑鎵�鏈塋istItem鏄剧ず鍑烘潵
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, list,
                 android.R.layout.simple_list_item_2,
                 new String[] {
@@ -107,12 +108,12 @@ public class MainActivity extends Activity {
 
     @SuppressWarnings("deprecation")
     private void setAdapterForListView3() {
-        // 从联系人数据库中查询到的结果集
+        // 浠庤仈绯讳汉鏁版嵁搴撲腑鏌ヨ鍒扮殑缁撴灉闆�
         Cursor cursor = this.getContentResolver().query(ContactsContract.Contacts.CONTENT_URI,
                 null, null, null, null);
         startManagingCursor(cursor);
 
-        // 通过映射关系把ListView中的所有ListItem显示出来
+        // 閫氳繃鏄犲皠鍏崇郴鎶奓istView涓殑鎵�鏈塋istItem鏄剧ず鍑烘潵
         ListAdapter listAdapter = new SimpleCursorAdapter(
                 this,
                 android.R.layout.two_line_list_item,
