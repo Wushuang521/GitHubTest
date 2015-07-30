@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">04_UI_Control_List_ListView_01</string>
+    <string name="title_main_activity">ListView</string>
+    <string name="textview1">simple_list_item_1  ArrayAdapter</string>
+    <string name="textview2">simple_list_item_2  SimpleAdapter</string>
+    <string name="textview3">two_line_list_item  SimpleCursorAdapter</string>
+
+</resources>
